@@ -26,8 +26,11 @@ class Calculator:
     # получить результат
     def get_result(self):
         try:
-            result = eval(self.expression) # метод вычисления
-            return result
+            if self.expression != "":
+                result = self.evaluate(self.expression) # метод вычисления
+                return result
+            else:
+                return 0
         except Exception as e:
             raise ValueError(f"Ошибка при вычислении выражения: {str(e)}")
 
